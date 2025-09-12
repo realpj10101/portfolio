@@ -1,0 +1,344 @@
+.page {
+    min-height: 100dvh;
+    background: var(--background);
+}
+
+/* -------- Hero -------- */
+.hero {
+    position: relative;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 0 16px;
+    overflow: hidden;
+
+    &__bg {
+        position: absolute;
+        border: 2px solid color-mix(in lab, var(--primary) 30%, transparent);
+        border-radius: 999px;
+
+        &--a {
+            inset: 80px auto auto 80px;
+            width: 128px;
+            height: 128px;
+        }
+
+        &--b {
+            inset: auto 80px 80px auto;
+            width: 96px;
+            height: 96px;
+            animation-direction: reverse;
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 880px;
+        margin-inline: auto;
+    }
+
+    .opacity0 {
+        opacity: 0;
+    }
+
+    &__avatar {
+        width: 128px;
+        height: 128px;
+        margin: 0 auto 24px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        padding: 4px;
+
+        &-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            background: var(--background);
+        }
+
+        &-icon {
+            font-weight: 800;
+            font-size: 36px;
+            color: var(--primary);
+        }
+    }
+
+    &__title {
+        font-size: clamp(40px, 6vw, 72px);
+        font-weight: 800;
+        margin: 0 0 12px;
+    }
+
+    &__subtitle {
+        font-size: clamp(24px, 4.5vw, 40px);
+        font-weight: 700;
+        margin: 0 0 16px;
+        color: var(--primary);
+    }
+
+    &__lead {
+        font-size: clamp(18px, 2.6vw, 22px);
+        color: var(--muted-foreground);
+        margin: 0 0 24px;
+        line-height: 1.6;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-outline {
+        text-decoration: none;
+    }
+
+    .animate-pulse-glow {
+        text-decoration: none;
+    }
+}
+
+/* -------- Sections -------- */
+.section {
+    padding: 80px 16px;
+}
+
+.section--card {
+    background: var(--card);
+}
+
+.section__title {
+    font-size: clamp(28px, 4.6vw, 44px);
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 24px;
+}
+
+.mb-16 {
+    margin-bottom: 64px;
+}
+
+.mt-12 {
+    margin-top: 24px;
+}
+
+/* -------- About -------- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    align-items: center;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.about__p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--foreground);
+    margin: 0 0 16px;
+}
+
+.about__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.about__visual {
+    height: 320px;
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, color-mix(in lab, var(--primary) 20%, transparent), color-mix(in lab, var(--accent) 20%, transparent));
+    display: grid;
+    place-items: center;
+
+    &-icon {
+        font-size: 64px;
+        color: var(--primary);
+        font-weight: 800;
+    }
+}
+
+/* -------- Skills -------- */
+.skills-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1100px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.p-24 {
+    padding: 24px;
+}
+
+.skill-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.skill-icon {
+    font-size: 28px;
+}
+
+.skill-title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.bar {
+    height: 8px;
+    background: var(--muted);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.bar__fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 999px;
+    transition: width 1s ease;
+}
+
+.skill-level {
+    margin: 8px 0 0;
+}
+
+/* -------- Projects -------- */
+.projects-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-card__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.project-card__img {
+    width: 100%;
+    height: 192px;
+    object-fit: cover;
+    transition: transform .3s ease;
+    display: block;
+}
+
+.project-card:hover .project-card__img {
+    transform: scale(1.06);
+}
+
+.project-card__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .5), transparent);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.project-card:hover .project-card__scrim {
+    opacity: 1;
+}
+
+.project-card__nav {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.project-card:hover .project-card__nav {
+    opacity: 1;
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+.project-card__dots {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .5);
+    transition: background .2s ease;
+}
+
+.dot--active {
+    background: var(--primary);
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.project-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.flex1 {
+    flex: 1 1 auto;
+}
+
+/* -------- Contact -------- */
+.contact-lead {
+    font-size: 20px;
+    color: var(--muted-foreground);
+    line-height: 1.7;
+    margin: 16px auto 32px;
+    max-width: 720px;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* -------- Footer -------- */
+.footer {
+    padding: 24px 16px;
+    border-top: 1px solid color-mix(in lab, var(--primary) 20%, transparent);
+}

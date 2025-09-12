@@ -1,1 +1,307 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== Color tokens (from your global.css) ==== */
+:root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;
+    --card: #1a1a1a;
+    --card-foreground: #ffffff;
+    --popover: #1e90ff;
+    --popover-foreground: #ffffff;
+    --primary: #1e90ff;
+    --primary-foreground: #ffffff;
+    --secondary: #9d00ff;
+    --secondary-foreground: #ffffff;
+    --muted: #2a2a2a;
+    --muted-foreground: #cccccc;
+    --accent: #ff007f;
+    --accent-foreground: #ffffff;
+    --border: #1e90ff;
+    --input: #1a1a1a;
+    --ring: #1e90ff;
+    --chart-1: #1e90ff;
+    --chart-2: #9d00ff;
+    --chart-3: #ff007f;
+    --chart-4: #1e90ff;
+    --chart-5: #9d00ff;
+    --radius: 12px;
+
+    --sidebar: #0a0a0a;
+    --sidebar-foreground: #ffffff;
+    --sidebar-primary: #1e90ff;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #ff007f;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #1e90ff;
+    --sidebar-ring: #1e90ff;
+}
+
+html,
+body {
+    height: 100%;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+/* ==== Utility-ish tokens ==== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.muted {
+    color: var(--muted-foreground);
+}
+
+/* ==== Simple UI primitives: card / button / badge ==== */
+.card {
+    background: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid color-mix(in lab, var(--border) 20%, transparent);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--primary) 20%, transparent);
+    transform: translateY(-4px);
+}
+
+.card-header {
+    padding: 16px 16px 0 16px;
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0 0 6px;
+}
+
+.card-description {
+    color: var(--muted-foreground);
+    margin: 0 0 12px;
+}
+
+.card-content {
+    padding: 0 16px 16px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-radius: calc(var(--radius) - 4px);
+    border: 1px solid transparent;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    transition: filter .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.05);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border-color: color-mix(in lab, var(--primary) 50%, transparent);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid color-mix(in lab, var(--primary) 30%, transparent);
+    color: var(--foreground);
+    background: color-mix(in lab, var(--primary) 10%, transparent);
+}
+
+/* ==== Animations (ported from your global.css) ==== */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px currentColor
+    }
+
+    50% {
+        box-shadow: 0 0 20px currentColor, 0 0 30px currentColor
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff;
+    }
+
+    50% {
+        box-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff;
+    }
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        opacity: 0;
+        transform: scale(.3)
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05)
+    }
+
+    70% {
+        transform: scale(.9)
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+    animation: slideInUp .6s ease-out both;
+}
+
+.animate-fade-in {
+    animation: fadeIn .8s ease-out both;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+}
+
+.animate-bounce-in {
+    animation: bounce-in .8s ease-out both;
+}
+
+.animate-slide-in-left {
+    animation: slide-in-left .6s ease-out both;
+}
+
+.animate-slide-in-right {
+    animation: slide-in-right .6s ease-out both;
+}
+
+/* Simple helpers */
+.gradient-primary {
+    background: linear-gradient(90deg, #1E90FF, #9D00FF, #FF007F);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hr-gradient {
+    width: 96px;
+    height: 4px;
+    margin: 0 auto;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1E90FF, #FF007F);
+}
