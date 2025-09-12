@@ -64,4 +64,124 @@
       </div>
     </div>
   </section>
+
+  <!-- Skills -->
+  <section class="section section--card">
+    <div class="container">
+      <div class="text-center mb-16 animate-slide-in-up">
+        <h2 class="section__title">Skills &amp; Expertise</h2>
+        <div class="hr-gradient mt-12"></div>
+      </div>
+
+      <div class="skills-grid">
+        @for (s of skills; track s.name; let i = $index) {
+        <div class="card animate-bounce-in" [style.animationDelay]="(i*0.1)+'s'">
+          <div class="card-content p-24">
+            <div class="skill-head">
+
+              @if ((s.icon ?? '').endsWith('.png') || (s.icon ?? '').endsWith('.svg') || (s.icon ?? '').startsWith('/'))
+              {
+              <img class="skill-icon animate-float" [style.animationDelay]="(i*0.2)+'s'" [src]="s.icon" height="50px"
+                [alt]="s.name + ' logo'" />
+              } @else {
+              <span class="skill-icon animate-float" [style.animationDelay]="(i*0.2)+'s'">
+                {{ iconFor(s.icon) }}
+              </span>
+              }
+
+              <h3 class="skill-title">{{ s.name }}</h3>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-16 animate-slide-in-up">
+        <h2 class="section__title">Featured Projects</h2>
+        <div class="hr-gradient mt-12"></div>
+      </div>
+
+      <div class="projects-grid">
+        @for (p of projects; track p.title; let i = $index) {
+        <div class="card project-card animate-bounce-in" [style.animationDelay]="(i*0.2)+'s'">
+          <div class="project-card__media">
+            <img class="project-card__img" [src]="p.images[projectImageIndexes[i] || 0] || '/assets/placeholder.svg'"
+              [alt]="p.title + ' - Image ' + ((projectImageIndexes[i]||0)+1)" />
+            <div class="project-card__scrim"></div>
+
+            <div class="project-card__nav">
+              <button class="btn btn-outline btn-sm" (click)="navigateProjectImage(i, 'prev')">‹</button>
+              <button class="btn btn-outline btn-sm" (click)="navigateProjectImage(i, 'next')">›</button>
+            </div>
+
+            <div class="project-card__dots">
+              @for (_ of p.images; track $index; let j = $index) {
+              <div class="dot" [class.dot--active]="j === (projectImageIndexes[i])">
+              </div>
+              }
+            </div>
+          </div>
+
+          <div class="card-header">
+            <h3 class="card-title">{{ p.title }}</h3>
+            <p class="card-description">{{ p.description }}</p>
+          </div>
+
+          <div class="card-content">
+            <div class="stack">
+              @for (t of p.stack; track t; let ti = $index) {
+              <span class="badge animate-bounce-in" [style.animationDelay]="(ti * 0.1) + 's'">
+                {{ t }}
+              </span>
+              }
+            </div>
+
+
+            <div class="project-actions">
+              <a class="btn btn-outline flex1" [href]="p.link" target="_blank" rel="noreferrer">Code</a>
+              <a class="btn flex1" [href]="p.demo" target="_blank" rel="noreferrer">Demo</a>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section class="section section--card">
+    <div class="container text-center">
+      <h2 class="section__title animate-slide-in-up">Let's Work Together</h2>
+      <div class="hr-gradient mt-12"></div>
+
+      <p class="contact-lead animate-slide-in-up" style="animation-delay:.2s">
+        Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+      </p>
+
+      <div class="contact-actions">
+        <a class="btn animate-pulse-glow" href="mailto:parsajfr1385oo@example.com"><span>
+          <img src="mail.svg" alt="">
+        </span> Email Me</a>
+        <a class="btn btn-outline animate-bounce-in" style="animation-delay:.2s" href="https://github.com/realpj10101"
+          target="_blank" rel="noreferrer">
+          <span>
+            <img src="github.svg" alt="" height="20px">
+          </span>
+          GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="muted">© 2025 Parsa Jafary</p>
+    </div>
+  </footer>
 </div>

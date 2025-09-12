@@ -335,6 +335,14 @@
     gap: 12px;
     justify-content: center;
     flex-wrap: wrap;
+
+    .animate-pulse-glow {
+        text-decoration: none;
+    }
+
+    .btn-outline {
+        text-decoration: none;
+    }
 }
 
 /* -------- Footer -------- */

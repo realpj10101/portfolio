@@ -17,13 +17,13 @@ export class AppComponent implements OnInit {
   isVisible = false;
 
   skills: Skill[] = [
-    { name: 'C#', level: 90, icon: 'code' },
-    { name: '.NET', level: 85, icon: 'code' },
-    { name: 'Angular', level: 80, icon: 'globe' },
-    { name: 'TypeScript', level: 85, icon: 'code' },
-    { name: 'JavaScript', level: 90, icon: 'code' },
-    { name: 'MongoDB', level: 75, icon: 'db' },
-    { name: 'MySQL', level: 80, icon: 'db' },
+    { name: 'C#', level: 90, icon: '/csharp.png' },
+    { name: '.NET', level: 85, icon: '/dotnet.png' },
+    { name: 'Angular', level: 80, icon: '/favicon.ico' },
+    { name: 'TypeScript', level: 85, icon: '/ts.png' },
+    { name: 'JavaScript', level: 90, icon: '/js.png' },
+    { name: 'MongoDB', level: 75, icon: '/mongo.png' },
+    { name: 'MySQL', level: 80, icon: '/mysql.png' },
     { name: 'HTML/CSS', level: 95, icon: 'palette' },
     { name: 'SCSS', level: 85, icon: 'palette' },
     { name: 'Tailwind', level: 90, icon: 'palette' },
