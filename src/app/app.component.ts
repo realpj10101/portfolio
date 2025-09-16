@@ -8,7 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   imports: [
-  
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -31,28 +31,31 @@ export class AppComponent implements OnInit {
 
   projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with real-time inventory management',
-      images: ['/assets/modern-ecommerce-dashboard.png', '/assets/ecommerce-product-page.png', '/assets/ecommerce-checkout-flow.png'],
-      link: 'https://github.com/example/ecommerce',
-      demo: 'https://ecommerce-demo.com',
-      stack: ['C#', '.NET', 'Angular', 'MongoDB', 'TypeScript'],
+      title: 'TehranPage',
+      description: 'Currency marketplace: admin manages currencies/prices; users can browse, filter, buy; custom exchanges with their own prices.',
+      images: ['/projects/tehranpage-1.png'],
+      demo: 'https://tehranpage.com/',
+      stack: ['C#', 'React', 'Tailwind', 'Next.js', 'TypeScript', 'My SQL', 'Dotnet'],
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates',
-      images: ['/assets/task-management-interface.png', '/assets/kanban-board-interface.jpg', '/assets/team-collaboration-dashboard.png'],
-      link: 'https://github.com/example/taskmanager',
-      demo: 'https://taskmanager-demo.com',
-      stack: ['Angular', 'TypeScript', 'MySQL', 'SCSS'],
+      title: 'Hallboard',
+      description: 'People discovery/dating-style app: users enter personal details and can be found by others.',
+      images: ['/projects/hallboard.png'],
+      demo: 'https://www.hallboard.com/',
+      stack: ['C#', 'Angular', 'SASS', 'Angular Material', 'TypeScript', 'Mongo DB', 'Dotnet',]
     },
     {
-      title: 'Analytics Dashboard',
-      description: 'Data visualization platform with interactive charts and reports',
-      images: ['/assets/analytics-dashboard-charts.png', '/assets/data-visualization-charts.png', '/assets/analytics-reports-interface.jpg'],
-      link: 'https://github.com/example/analytics',
+      title: 'SoundWave',
+      description: 'Music portfolio site: upload, search, and listen to tracks.',
+      images: [
+        '/projects/soundwave.png',
+        '/projects/soundwave-2.png',
+        '/projects/soundwave-3.png',
+        '/projects/soundwave-4.png',
+        '/projects/soundwave-5.png',
+      ],
       demo: 'https://analytics-demo.com',
-      stack: ['JavaScript', 'HTML', 'CSS', 'MongoDB', 'Tailwind'],
+      stack: ['C#', 'Angular', 'SASS', 'Angular Material', 'TypeScript', 'Mongo DB', 'Dotnet'],
     },
   ];
 
