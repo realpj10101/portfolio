@@ -57,6 +57,52 @@ export class AppComponent implements OnInit {
       demo: 'https://analytics-demo.com',
       stack: ['C#', 'Angular', 'SASS', 'Angular Material', 'TypeScript', 'Mongo DB', 'Dotnet'],
     },
+    {
+      title: 'Exvora',
+      description: 'Exchange platform where users can create their own exchanges, get admin approval, and manage crypto currencies with real-time market prices.',
+      images: [
+        '/projects/exvora.png',
+        '/projects/exvora-2.png',
+        '/projects/exvora-3.png',
+        '/projects/exvora-4.png',
+        '/projects/exvora-5.png',
+      ],
+      demo: 'https://analytics-demo.com',
+      stack: ['C#', 'Angular', 'SASS', 'Angular Material', 'TypeScript', 'Mongo DB', 'Dotnet'],
+    },
+    {
+      title: 'City Menu',
+      description: 'Restaurant menu management: admin manages menues; users can customise the menu and add their own.',
+      images: [
+        '/projects/citymenu.png',
+      ],
+      demo: 'https://new.citymenu.app/',
+      stack: ['HTML', 'Tailwind'],
+    },
+    {
+      title: 'Boomdeal',
+      description: 'Find Cars: users can find the car they want. Tech: Angular, Angular Material, SASS, TypeScript, Mongo DB',
+      images: [
+        '/projects/boomdeal.png',
+        '/projects/boomdeal-2.png',
+      ],
+      demo: 'https://boomdeal.net/',
+      stack: ['Angular', 'Angular Material', 'SASS', 'TypeScript', 'Mongo DB'],
+    },
+    {
+      title: 'WBT',
+      description: 'All-in-one basketball community: players and coaches create profiles, share media, build teams, and stay connected with real-time chat.',
+      images: [
+        '/projects/wbt.png',
+        '/projects/wbt-2.png',
+        '/projects/wbt-3.png',
+        '/projects/wbt-4.png',
+        '/projects/wbt-5.png',
+        '/projects/wbt-6.png',
+      ],
+      demo: 'https://example.net/',
+      stack: ['C#', 'Angular', 'SASS', 'Angular Material', 'TypeScript', 'Mongo DB', 'Dotnet'],
+    },
   ];
 
   projectImageIndexes: { [projectIdx: number]: number } = {};

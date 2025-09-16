@@ -219,10 +219,32 @@
 }
 
 /* -------- Projects -------- */
+.project-card {
+  display: flex;
+  flex-direction: column; 
+  height: 100%; 
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* بقیه ارتفاع رو پر میکنه */
+
+    .stack {
+      margin-bottom: 1rem; /* فاصله بین تگ‌ها و دکمه */
+    }
+
+    .project-actions {
+      margin-top: auto; /* دکمه همیشه میره پایین */
+      display: flex;
+      justify-content: flex-start; /* می‌تونی center یا space-between بزنی */
+    }
+  }
+}
+
 .projects-grid {
     display: grid;
     gap: 24px;
-    grid-template-columns: 1fr;
+    // grid-template-columns: 1fr;
 
     @media (min-width: 900px) {
         grid-template-columns: repeat(2, 1fr);
@@ -318,6 +340,7 @@
 }
 
 .flex1 {
+    text-decoration: none;
     flex: 1 1 auto;
 }
 
