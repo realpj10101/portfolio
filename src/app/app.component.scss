@@ -128,8 +128,11 @@
 
 /* -------- About -------- */
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    // display: grid;
+    // grid-template-columns: 1fr;
     gap: 32px;
     align-items: center;
 
